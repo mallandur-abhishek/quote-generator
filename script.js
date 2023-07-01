@@ -33,13 +33,8 @@ const tweetQuote = () => {
 }
 
 const loading = (flag = true) => {
-    if (flag) {
-        loader.hidden = false;
-        quoteContainer.hidden = true;
-    } else {
-        loader.hidden = true;
-        quoteContainer.hidden = false;
-    }
+    loader.hidden = !flag;
+    quoteContainer.hidden = flag;
 }
 
 async function getQuotes() {
